@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-8 col-xs-10 offset-2">
+                <div class="card mt-5">
+                    <h1 class="display-6" style="text-align: center;">To sell on CoMeds, you first need to verify your
+                        phone number</h1>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action="/user/mobileverifyS1" method="POST">
+                            <div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="phone">Enter your phone number: </label>
+                                    <input class="form-control" type="text" name="ccode" id="ccode" placeholder="+91" />
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="tel" name="phone" id="phone"
+                                        placeholder="98765xxxxx" />
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success">Proceed</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+            <h2> To sell on CoMeds, you first need to verify your phone number.</h2>
+        </div>
+        <div>
+            <form action="/user/mobileverifyS1" method="POST">
+                <div>
+                    <label for="phone">Enter your phone number: </label>
+                    <input type="text" name="ccode" id="ccode" placeholder="+91" />
+                    <input type="tel" name="phone" id="phone" placeholder="9876543210" />
+                </div>
+                <div>
+                    <button type="submit">Proceed</button>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <%- include('../partials/footer') %>

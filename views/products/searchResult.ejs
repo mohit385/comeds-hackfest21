@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 8%;">
+                <% if(foundProducts.length>0){ %>
+                    <div class="card">
+                        <h1 class="display-6" style="text-align: center;">All Products here</h1>
+                    </div>
+                <% }else { %>
+                    <div class="card">
+                        <h1 class="display-6" style="text-align: center;">Oops! No results available :(</h1>
+                    </div>
+                <% } %>
+                <% for(product of foundProducts){ %>
+                    <div class="card mt-5">
+                        <div class="card-body" style="text-align: center;">
+                            <a href='/products/<%= product._id %>'>
+                                <button class="btn btn-primary">
+                                    <h3>
+                                        <%= product.name %>
+                                    </h3>
+                                </button>
+                            </a>
+                            <h4>
+                                Category:
+                                <%= product.category %>
+                            </h4>
+                            <p>
+                                Rs.
+                                <%= product.price %>
+                            </p>
+                            <a href='/products/<%= product._id %>/buy'><button class="btn btn-success">Buy Now</button></a>
+                        </div>
+                    </div>
+                    <% } %>
+
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <!-- <h1>All products here</h1>
+    <ul>
+        <% for(product of foundProducts){ %>
+            <li>
+                <a href='/products/<%= product._id %>'>
+                    <h3>
+                        <%= product.name %>
+                    </h3>
+                </a>
+                <h4>
+                    <%= product.category %>
+                </h4>
+                <p>
+                    <%= product.price %>
+                </p>
+            </li>
+            <% } %>
+    </ul> -->
+
+    <%- include('../partials/footer') %>

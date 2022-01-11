@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 8%;">
+                <div class="card">
+                    <h1 class="display-6" style="text-align: center;">Provide your details:</h1>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action='/products/<%= foundProduct._id %>/buy' method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Your Name: </label>
+                                <input class="form-control" type="text" name="username" id="username"
+                                    value=<%= name %> >
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Your shipping adress: </label>
+                                <input class="form-control" type="text" name="address" id="address"
+                                    placeholder="Shipping Address">
+                            </div>
+                            <p>Only Cash on Delivery option Available for now!!!</p>
+                            <button type="submit" class="btn btn-success">Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+
+        <!-- <h2>Provide your details: </h2>
+        <form action='/products/<%= foundProduct._id %>/buy' method="POST">
+            <div class="mb-3">
+                <label for="username">Your Name: </label>
+                <input type="text" name="username" id="username" placeholder="Name">
+            </div>
+            <div class="mb-3">
+                <label for="address">Your shipping adress: </label>
+                <input type="text" name="address" id="address" placeholder="Shipping Address">
+            </div>
+            <p>Only Cash on Delivery option Available for now!!!</p>
+            <button>Order</button>
+        </form> -->
+    </div>
+
+
+
+    <%- include('../partials/footer') %>

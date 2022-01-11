@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+    <div class="container" style="margin-top: 60px;">
+        <% if(buyer.boughtProducts.length == 0){ %>
+            <h2>Oops!, No results available :(</h2>
+        <% }else{ %>
+            <h1>Your Purchase History: </h1>
+        <% } %>   
+        <div class="row">
+            <% buyer.boughtProducts.forEach(function(product){ %>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <%= product.name %>
+                        </div>
+                        <!-- <img src="<%= product.images[0] ?  product.images[0].url : '' %>" alt="Product Image"
+                            class="card-img-top" style="height: 18rem;"> -->
+                        <div class="card-body">
+                            <p>
+                                <span class="badge bg-info text-dark">Category: <%= product.category %></span>
+                            </p>
+                            <!-- <p>
+                                Qty. Avl.:  <%= product.qtyAvl %>
+                            </p> -->
+                            <p>
+                                ₹ <%= product.price %>
+                            </p>
+                            <!-- <a href='/products/<%= product._id %>/buy'><button class="btn btn-success">Buy
+                                Again...</button></a> -->
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div> 
+    </div>
+
+<%- include('../partials/footer') %>

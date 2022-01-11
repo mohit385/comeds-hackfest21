@@ -1,0 +1,55 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-8 col-xs-10 offset-2">
+                <div class="card mt-5">
+                    <h1 class="display-6" style="text-align: center;">
+                        We sent a 6-digit code on your mobile number <%= phone %>.
+                    </h1>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action="/user/mobileverifyS2" method="POST">
+                            <div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="phone">Your phone number: </label>
+                                    <input class="form-control" type="text" name="ccode" id="ccode" readonly value=<%= phone.substring(0,3) %> />
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="tel" name="phone" id="phone" readonly
+                                        value= <%= phone.substring(3) %> />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="otp">Enter the 6-digit code you received: </label>
+                                <input class="form-control" type="number" name="otp" id="otp" />
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-info">Verify!!!</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+            <h2> We sent a 6-digit code on your mobile number. Enter to verify!!!.</h2>
+        </div>
+        <div>
+            <form action="/user/mobileverifyS2" method="POST">
+                <div>
+                    <label for="phone">Enter your phone number: </label>
+                    <input type="text" name="ccode" id="ccode" placeholder="+91" />
+                    <input type="tel" name="phone" id="phone" placeholder="9876543210" />
+                </div>
+                <div>
+                    <label for="otp">Enter the 6-digit code you received: </label>
+                    <input type="number" name="otp" id="otp" />
+
+                </div>
+                <div>
+                    <button type="submit">Verify!!!</button>
+                </div>
+            </form>
+        </div> -->
+    </div>
+    <%- include('../partials/footer') %>

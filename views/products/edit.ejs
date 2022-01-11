@@ -1,0 +1,77 @@
+<%- include('../partials/header') %>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 8%;">
+                <div class="card">
+                    <h1 class="display-6" style="text-align: center;">Update
+                        <%= product.name %>
+                    </h1>
+                </div>
+
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action='/products/<%= product._id %>?_method=PUT' method='POST' enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name" class="form-label" style="color:white">Name</label>
+
+                                <input type="text" class="form-control" name="name" id="name" style="width: 500px;" value='<%= product.name %>'>
+                            </div>
+                            <div class="mb-3">
+                                <label for="detail" class="form-label" style="color:white">Detail</label>
+                                <input type="text" class="form-control" name="detail" style="width: 500px;" id="detail" value='<%= product.detail %>' />
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label" style="color:white">Price</label>
+                                <input type="number" class="form-control" style="width: 500px;" name="price" id="price" value='<%= product.price %>' />
+                            </div>
+                            <div class="mb-3">
+                                <label for="qtyAvl" class="form-label" style="color:white">Quantity</label>
+                                <input type="number" class="form-control" style="width: 500px;" name="qtyAvl" class="qtyAvl" value='<%= product.qtyAvl %>' />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Upload Product Images</label>
+                                <div class="form-file custom-file">
+                                    <input type="file" class="form-file-input" name="image" id="image" multiple>
+                                    <label for="image" class="form-file-label">
+                                        <span class="form-file-button">Browse</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label" style="color:white">Choose a category: </label>
+                                <select name="category" id="category">
+                                    <% for(let category of categories){ %>
+                                        <option value='<%= category %>' <%=product.category===category ? 'selected' : ''
+                                            %>><%= category %>
+                                        </option>
+                                        <% } %>
+                                            <option value="medicine">Medicine</option>
+                                            <option value="oxygen-cylinder">Oxygen Cylinder</option>
+                                            <option value="equipments">Equipments</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cityOfPresence" class="form-label">City</label>
+                                <input type="text" name="cityOfPresence" id="cityOfPresence" style="width: 500px;" value='<%= product.cityOfPresence %>'>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <% product.images.forEach(function(img, i){ %>
+                                    <img src="<%= img.url %>" alt="" class="img-thumbnail">
+                                    <div class="form-check-inline">
+                                        <input type="checkbox" name="deleteImages[]" id="image-<%= i %>" value="<%= img.filename %> ">
+                                    </div>
+                                    <label for="image-<%= i %>">Delete ?</label>
+                                    <% }) %>
+                            </div> -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>

@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<div class="container" style="margin-top: 60px;">
+    <h2>Your account details: </h2>
+</div>
+
+<div class="container">
+    <h2>
+        Name: 
+        <em>
+            <%= curUser.username %>
+        </em> <% if(curUser.isSeller) { %>
+                <b>(Seller)</b>
+              <% } %>  
+        
+    </h2>
+    <h2>Email Id: <em><%= curUser.email %></em></h2>
+    <h2>DOB: <%= curUser.dateOfBirth.toDateString().substring(4) %></h2>
+    <h3><a href="/user/purchasehistory" style="color:white">  Purchase History</a></h3>
+    <!-- <a href="#" style="color:white">Change Password</a>  -->
+</div>
+
+<%- include('../partials/footer') %>

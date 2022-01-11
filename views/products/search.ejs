@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 8%;">
+                <div class="card">
+                    <h1 class="display-6" style="text-align: center;">Search by city and category</h1>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action='/products/search' method='POST'>
+                            <div class="mb-3">
+                                <label for="cityOfPresence" class="form-label"></label>
+                                <input class="form-control" type='text' name="cityOfPresence" id="cityOfPresence"
+                                    placeholder="City">
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Categories</label>
+                                <select name="category" id="category" class="form-select">
+                                    <option value='medicine'>Medicine</option>
+                                    <option value='oxygen-cylinder'>Oxygen Cylinder</option>
+                                    <option value='equipments'>Equipments</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+        <!-- <h3> Search by city and category</h3>
+        <div class="container">
+            <h3>Search by city and product name</h3>
+            <form action='/products/search' method='POST'>
+                <div class="mb-3">
+                    <input type='text' name="cityOfPresence" id="cityOfPresence" placeholder="City">
+                </div>
+                <div class="mb-3">
+                    <select name="category" id="category">
+                        <option value='medicine'>Medicine</option>
+                        <option value='oxygen-cylinder'>Oxygen Cylinder</option>
+                        <option value='equipments'>Equipments</option>
+                    </select>
+                </div>
+                <button>Search</button>
+            </form>
+        </div> -->
+    </div>
+    <%- include('../partials/footer') %>

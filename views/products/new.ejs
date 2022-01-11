@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 8%;">
+                <div class="card">
+                    <h1 class="display-6" style="text-align: center;">Add new product</h1>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <form action="/products" method="POST" id="form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Product Name" name="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="detail" class="form-label">Details</label>
+                                <input type="text" class="form-control" id="detail" aria-describedby="emailHelp" placeholder="Details of the Product" name="detail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="text" class="form-control" id="price" aria-describedby="emailHelp" placeholder="Price of the Product" name="price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="qtyAvl" class="form-label">Quantity Available</label>
+                                <input type="number" class="form-control" name="qtyAvl" aria-describedby="emailHelp" id="qtyAvl" placeholder="Quantity" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Upload Product Images</label>
+                                <div class="form-file custom-file">
+                                    <input type="file" class="form-file-input" name="image" id="image" multiple>
+                                    <label for="image" class="form-file-label">
+                                        <span class="form-file-button">Browse</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Choose a category: </label>
+                                <select name="category" id="category" class="form-control">
+                                    <% for(let category of categories){ %>
+                                        <option value='<%= category %>'>
+                                            <%= category %>
+                                        </option>
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cityOfPresence" class="form-label">City</label>
+                                <input type="text" class="form-control" id="cityOfPresence" aria-describedby="emailHelp" placeholder="City" name="cityOfPresence">
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+
+
+    <!-- <h2>Add new product</h2>
+    <form action='/products' method='POST'>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder='Name'>
+        <br>
+        <label for="detail">Detail</label>
+        <input type="text" name="detail" id="detail" placeholder="Product Details" />
+        <br>
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price" placeholder="Product Price" />
+        <br>
+        <label for="qtyAvl"></label>
+        <input type="number" name="qtyAvl" class="qtyAvl" placeholder="Quantity" />
+        <br>
+        <label for="image"></label>
+        <input type="text" name="image" class="image" placeholder="Image Link" />
+        <br>
+        <label for="category">Choose a category: </label>
+        <select name="category" id="category">
+            <% for(let category of categories){ %>
+                <option value='<%= category %>'>
+                    <%= category %>
+                </option>
+                <% } %>
+                     <option value="medicine">Medicine</option>
+            <option value="oxygen-cylinder">Oxygen Cylinder</option>
+            <option value="equipments">Equipments</option> -->
+    <!-- </select>
+    <br>
+    <button>Submit</button>
+    </form> -->-->
+    <!-- JavaScript Bundle with Popper -->
+    <%- include('../partials/footer') %>
